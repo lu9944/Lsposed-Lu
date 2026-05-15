@@ -42,9 +42,7 @@ jobs:
 
       - name: Install Ninja 1.12
         run: |
-          wget -q https://github.com/nicknisi/ninja-builds/releases/download/v1.12.1/ninja-linux.zip
-          unzip -o ninja-linux.zip -d /usr/local/bin
-          ninja --version
+          pip install ninja
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
