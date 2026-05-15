@@ -40,6 +40,12 @@ jobs:
           sdkmanager --install "ndk;28.0.12433566"
           sdkmanager --install "cmake;3.30.5"
 
+      - name: Install Ninja 1.12
+        run: |
+          wget -q https://github.com/nicknisi/ninja-builds/releases/download/v1.12.1/ninja-linux.zip
+          unzip -o ninja-linux.zip -d /usr/local/bin
+          ninja --version
+
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
         with:
