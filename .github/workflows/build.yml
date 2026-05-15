@@ -43,6 +43,10 @@ jobs:
       - name: Install Ninja 1.12
         run: |
           pip install ninja
+          NINJA_PATH=$(which ninja)
+          SDK_NINJA="$ANDROID_HOME/cmake/3.30.5/bin/ninja"
+          cp "$NINJA_PATH" "$SDK_NINJA"
+          ninja --version
 
       - name: Setup pnpm
         uses: pnpm/action-setup@v4
