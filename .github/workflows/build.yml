@@ -50,6 +50,8 @@ jobs:
 
       - name: Build
         run: ./gradlew zipZygiskRelease
+        env:
+          GRADLE_OPTS: "-Dorg.gradle.jvmargs=-Xmx4g -XX:+HeapDumpOnOutOfMemoryError"
 
       - name: List build outputs
         run: ls -la magisk-loader/release/
